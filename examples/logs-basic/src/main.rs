@@ -14,9 +14,12 @@ fn main() {
         )
         .with_simple_exporter(exporter)
         .build();
+    println!("provider ga dekitayo");
     let layer = layer::OpenTelemetryTracingBridge::new(&provider);
+    println!("layer wo teigi sitayo");
     tracing_subscriber::registry().with(layer).init();
-
+    println!("tracing subscriber wo init sitayo");
     error!(name: "my-event-name", target: "my-system", event_id = 20, user_name = "otel", user_email = "otel@opentelemetry.io", message = "This is an example message");
+    println!("error wo yobiowatta yo");
     let _ = provider.shutdown();
 }

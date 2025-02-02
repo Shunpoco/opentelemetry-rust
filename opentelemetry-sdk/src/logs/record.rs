@@ -4,7 +4,7 @@ use opentelemetry::{
     trace::{SpanContext, SpanId, TraceFlags, TraceId},
     Key,
 };
-use std::{borrow::Cow, time::SystemTime};
+use std::{borrow::Cow, fmt::Display, time::SystemTime};
 
 // According to a Go-specific study mentioned on https://go.dev/blog/slog,
 // up to 5 attributes is the most common case.
@@ -90,6 +90,7 @@ impl opentelemetry::logs::LogRecord for LogRecord {
         K: Into<Key>,
         V: Into<AnyValue>,
     {
+        println!("add_attributes suruyo");
         for (key, value) in attributes.into_iter() {
             self.add_attribute(key, value);
         }
@@ -100,7 +101,9 @@ impl opentelemetry::logs::LogRecord for LogRecord {
         K: Into<Key>,
         V: Into<AnyValue>,
     {
+        println!("add_attribute dayo!!");
         self.attributes.push(Some((key.into(), value.into())));
+        println!("{:?}", self.attributes);
     }
 
     fn set_trace_context(

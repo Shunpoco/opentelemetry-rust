@@ -166,9 +166,9 @@ where
 
         #[cfg(not(feature = "experimental_metadata_attributes"))]
         let meta = event.metadata();
-
+        println!("{:?}", meta);
+        println!("OpenTelemetryTracingBridge no on_event dayo");
         let mut log_record = self.logger.create_log_record();
-
         // TODO: Fix heap allocation
         log_record.set_target(meta.target().to_string());
         log_record.set_event_name(meta.name());

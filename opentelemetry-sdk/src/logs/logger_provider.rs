@@ -280,11 +280,13 @@ pub struct Logger {
 
 impl Logger {
     pub(crate) fn new(scope: InstrumentationScope, provider: LoggerProvider) -> Self {
+        println!("Logger no new dayo");
         Logger { scope, provider }
     }
 
     #[cfg(test)]
     pub(crate) fn instrumentation_scope(&self) -> &InstrumentationScope {
+        println!("Logger no instrumentation scope dayo");
         &self.scope
     }
 }
@@ -293,11 +295,14 @@ impl opentelemetry::logs::Logger for Logger {
     type LogRecord = LogRecord;
 
     fn create_log_record(&self) -> Self::LogRecord {
+        println!("create log record suruyo");
         LogRecord::new()
     }
 
     /// Emit a `LogRecord`.
     fn emit(&self, mut record: Self::LogRecord) {
+        println!("emit suruyo");
+        println!("{:?}", record);
         let provider = &self.provider;
         let processors = provider.log_processors();
 
@@ -323,6 +328,7 @@ impl opentelemetry::logs::Logger for Logger {
 
     #[cfg(feature = "spec_unstable_logs_enabled")]
     fn event_enabled(&self, level: Severity, target: &str) -> bool {
+        println!("event enabled suruyo");
         self.provider
             .log_processors()
             .iter()
