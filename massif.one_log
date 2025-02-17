@@ -1,0 +1,1866 @@
+desc: --massif-out-file=./massif.one_log --time-unit=B
+cmd: ./target/debug/batch-processor
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=624
+mem_heap_B=592
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=1656
+mem_heap_B=1616
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2016
+mem_heap_B=1496
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3048
+mem_heap_B=472
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=3536
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=4448
+mem_heap_B=176
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=5184
+mem_heap_B=664
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=6128
+mem_heap_B=664
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=6616
+mem_heap_B=1136
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=7456
+mem_heap_B=560
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=40232
+mem_heap_B=33328
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=detailed
+n3: 33328 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 32768 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n1: 32768 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+ n1: 472 0x1A88DC: alloc::alloc::alloc (alloc.rs:99)
+  n1: 472 0x1A8A1C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 472 0x1A8BC8: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc.rs:257)
+    n1: 472 0x1A95A1: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+     n1: 472 0x1A95A1: hashbrown::raw::RawTableInner::new_uninitialized (mod.rs:1534)
+      n1: 472 0x1A992B: hashbrown::raw::RawTableInner::fallible_with_capacity (mod.rs:1572)
+       n1: 472 0x16BEEE: prepare_resize<alloc::alloc::Global> (mod.rs:2633)
+        n1: 472 0x16BEEE: resize_inner<alloc::alloc::Global> (mod.rs:2829)
+         n1: 472 0x16BEEE: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2719)
+          n1: 472 0x16BEEE: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1045)
+           n1: 472 0x16E5C4: hashbrown::raw::RawTable<T,A>::reserve (mod.rs:993)
+            n1: 472 0x16DDAD: hashbrown::raw::RawTable<T,A>::find_or_find_insert_slot (mod.rs:1206)
+             n1: 472 0x1891F7: find_or_find_insert_slot<opentelemetry::common::Key, opentelemetry::common::Value, std::hash::random::RandomState, alloc::alloc::Global, opentelemetry::common::Key> (map.rs:1810)
+              n1: 472 0x1891F7: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1790)
+               n2: 472 0x17BFB6: std::collections::hash::map::HashMap<K,V,S>::insert (map.rs:1169)
+                n1: 472 0x16641A: opentelemetry_sdk::resource::Resource::from_detectors (mod.rs:150)
+                 n1: 472 0x16604B: opentelemetry_sdk::resource::Resource::builder (mod.rs:64)
+                  n1: 472 0x14C6B6: <opentelemetry_stdout::logs::exporter::LogExporter as core::default::Default>::default (exporter.rs:19)
+                   n1: 472 0x14B43F: batch_processor::main (main.rs:10)
+                    n1: 472 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                     n1: 472 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                      n1: 472 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                       n1: 472 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                        n1: 472 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                         n1: 472 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                          n1: 472 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                           n1: 472 0x205B06: {closure#1} (rt.rs:174)
+                            n1: 472 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                             n1: 472 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                              n1: 472 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                               n1: 472 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                                n1: 472 0x124439: std::rt::lang_start (rt.rs:194)
+                                 n0: 472 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n0: 88 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=40960
+mem_heap_B=33968
+mem_heap_extra_B=128
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=43016
+mem_heap_B=36016
+mem_heap_extra_B=136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=43744
+mem_heap_B=36656
+mem_heap_extra_B=224
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=44200
+mem_heap_B=37010
+mem_heap_extra_B=326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=44968
+mem_heap_B=37514
+mem_heap_extra_B=382
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=45704
+mem_heap_B=38002
+mem_heap_extra_B=422
+mem_stacks_B=0
+heap_tree=detailed
+n4: 38002 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 34816 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n2: 34816 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1280 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1280 0x20C05D: alloc (unix.rs:28)
+   n1: 1280 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n2: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n1: 640 0x1303C8: new<std::sync::mpmc::counter::Counter<std::sync::mpmc::array::Channel<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>> (boxed.rs:256)
+         n1: 640 0x1303C8: std::sync::mpmc::counter::new (counter.rs:21)
+          n1: 640 0x14710A: std::sync::mpmc::sync_channel (mod.rs:256)
+           n1: 640 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+            n1: 640 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+             n1: 640 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+              n1: 640 0x14B57C: batch_processor::main (main.rs:11)
+               n1: 640 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                n1: 640 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                 n1: 640 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                  n1: 640 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                   n1: 640 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                    n1: 640 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                     n1: 640 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                      n1: 640 0x205B06: {closure#1} (rt.rs:174)
+                       n1: 640 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                        n1: 640 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                         n1: 640 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                          n1: 640 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                           n1: 640 0x124439: std::rt::lang_start (rt.rs:194)
+                            n0: 640 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+        n1: 640 0x130888: new<std::sync::mpmc::counter::Counter<std::sync::mpmc::array::Channel<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>> (boxed.rs:256)
+         n1: 640 0x130888: std::sync::mpmc::counter::new (counter.rs:21)
+          n1: 640 0x146D6A: std::sync::mpmc::sync_channel (mod.rs:256)
+           n1: 640 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+            n1: 640 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+             n1: 640 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+              n1: 640 0x14B57C: batch_processor::main (main.rs:11)
+               n1: 640 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                n1: 640 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                 n1: 640 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                  n1: 640 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                   n1: 640 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                    n1: 640 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                     n1: 640 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                      n1: 640 0x205B06: {closure#1} (rt.rs:174)
+                       n1: 640 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                        n1: 640 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                         n1: 640 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                          n1: 640 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                           n1: 640 0x124439: std::rt::lang_start (rt.rs:194)
+                            n0: 640 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+ n1: 960 0x1A88DC: alloc::alloc::alloc (alloc.rs:99)
+  n1: 960 0x1A8A1C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 960 0x1A8BC8: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc.rs:257)
+    n1: 960 0x1A95A1: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+     n1: 960 0x1A95A1: hashbrown::raw::RawTableInner::new_uninitialized (mod.rs:1534)
+      n1: 960 0x1A992B: hashbrown::raw::RawTableInner::fallible_with_capacity (mod.rs:1572)
+       n1: 960 0x16BEEE: prepare_resize<alloc::alloc::Global> (mod.rs:2633)
+        n1: 960 0x16BEEE: resize_inner<alloc::alloc::Global> (mod.rs:2829)
+         n1: 960 0x16BEEE: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2719)
+          n1: 960 0x16BEEE: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1045)
+           n1: 960 0x16E5C4: hashbrown::raw::RawTable<T,A>::reserve (mod.rs:993)
+            n1: 960 0x16DDAD: hashbrown::raw::RawTable<T,A>::find_or_find_insert_slot (mod.rs:1206)
+             n1: 960 0x1891F7: find_or_find_insert_slot<opentelemetry::common::Key, opentelemetry::common::Value, std::hash::random::RandomState, alloc::alloc::Global, opentelemetry::common::Key> (map.rs:1810)
+              n1: 960 0x1891F7: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1790)
+               n2: 960 0x17BFB6: std::collections::hash::map::HashMap<K,V,S>::insert (map.rs:1169)
+                n1: 716 0x16641A: opentelemetry_sdk::resource::Resource::from_detectors (mod.rs:150)
+                 n2: 716 0x16604B: opentelemetry_sdk::resource::Resource::builder (mod.rs:64)
+                  n1: 472 0x14C6B6: <opentelemetry_stdout::logs::exporter::LogExporter as core::default::Default>::default (exporter.rs:19)
+                   n1: 472 0x14B43F: batch_processor::main (main.rs:10)
+                    n1: 472 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                     n1: 472 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                      n1: 472 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                       n1: 472 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                        n1: 472 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                         n1: 472 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                          n1: 472 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                           n1: 472 0x205B06: {closure#1} (rt.rs:174)
+                            n1: 472 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                             n1: 472 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                              n1: 472 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                               n1: 472 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                                n1: 472 0x124439: std::rt::lang_start (rt.rs:194)
+                                 n0: 472 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                  n0: 244 in 1 place, below massif's threshold (1.00%)
+                n0: 244 in 2 places, all below massif's threshold (1.00%)
+ n0: 946 in 15 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=46648
+mem_heap_B=38002
+mem_heap_extra_B=422
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=47136
+mem_heap_B=38474
+mem_heap_extra_B=438
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=47664
+mem_heap_B=37986
+mem_heap_extra_B=398
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=48344
+mem_heap_B=38230
+mem_heap_extra_B=418
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=48936
+mem_heap_B=38790
+mem_heap_extra_B=450
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=49792
+mem_heap_B=37986
+mem_heap_extra_B=398
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=50344
+mem_heap_B=38282
+mem_heap_extra_B=446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=51304
+mem_heap_B=38770
+mem_heap_extra_B=470
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=51792
+mem_heap_B=38526
+mem_heap_extra_B=466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=52280
+mem_heap_B=38770
+mem_heap_extra_B=470
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=52768
+mem_heap_B=39242
+mem_heap_extra_B=486
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=53640
+mem_heap_B=38666
+mem_heap_extra_B=430
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=54344
+mem_heap_B=38186
+mem_heap_extra_B=430
+mem_stacks_B=0
+heap_tree=detailed
+n5: 38186 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 34816 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n2: 34816 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1280 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1280 0x20C05D: alloc (unix.rs:28)
+   n1: 1280 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n2: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n1: 640 0x1303C8: new<std::sync::mpmc::counter::Counter<std::sync::mpmc::array::Channel<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>> (boxed.rs:256)
+         n1: 640 0x1303C8: std::sync::mpmc::counter::new (counter.rs:21)
+          n1: 640 0x14710A: std::sync::mpmc::sync_channel (mod.rs:256)
+           n1: 640 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+            n1: 640 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+             n1: 640 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+              n1: 640 0x14B57C: batch_processor::main (main.rs:11)
+               n1: 640 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                n1: 640 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                 n1: 640 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                  n1: 640 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                   n1: 640 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                    n1: 640 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                     n1: 640 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                      n1: 640 0x205B06: {closure#1} (rt.rs:174)
+                       n1: 640 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                        n1: 640 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                         n1: 640 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                          n1: 640 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                           n1: 640 0x124439: std::rt::lang_start (rt.rs:194)
+                            n0: 640 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+        n1: 640 0x130888: new<std::sync::mpmc::counter::Counter<std::sync::mpmc::array::Channel<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>> (boxed.rs:256)
+         n1: 640 0x130888: std::sync::mpmc::counter::new (counter.rs:21)
+          n1: 640 0x146D6A: std::sync::mpmc::sync_channel (mod.rs:256)
+           n1: 640 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+            n1: 640 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+             n1: 640 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+              n1: 640 0x14B57C: batch_processor::main (main.rs:11)
+               n1: 640 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                n1: 640 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                 n1: 640 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                  n1: 640 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                   n1: 640 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                    n1: 640 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                     n1: 640 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                      n1: 640 0x205B06: {closure#1} (rt.rs:174)
+                       n1: 640 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                        n1: 640 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                         n1: 640 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                          n1: 640 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                           n1: 640 0x124439: std::rt::lang_start (rt.rs:194)
+                            n0: 640 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+ n0: 1146 in 16 places, all below massif's threshold (1.00%)
+ n1: 472 0x1A3DCC: alloc::alloc::alloc (alloc.rs:99)
+  n1: 472 0x1A3F0C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 472 0x1A4028: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc.rs:257)
+    n1: 472 0x1A3721: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+     n1: 472 0x1A3721: hashbrown::raw::RawTableInner::new_uninitialized (mod.rs:1534)
+      n1: 472 0x16DB7D: hashbrown::raw::RawTable<T,A>::new_uninitialized (mod.rs:719)
+       n1: 472 0x16AB8F: <hashbrown::raw::RawTable<T,A> as core::clone::Clone>::clone (mod.rs:3215)
+        n1: 472 0x188E65: <hashbrown::map::HashMap<K,V,S,A> as core::clone::Clone>::clone (map.rs:194)
+         n1: 472 0x17C06C: <std::collections::hash::map::HashMap<K,V,S> as core::clone::Clone>::clone (map.rs:1333)
+          n1: 472 0x17747A: opentelemetry_sdk::resource::Resource::merge (mod.rs:179)
+           n1: 472 0x177B75: opentelemetry_sdk::resource::ResourceBuilder::with_attributes (mod.rs:293)
+            n1: 472 0x16661A: opentelemetry_sdk::resource::ResourceBuilder::with_attribute (mod.rs:288)
+             n1: 472 0x12A4F6: opentelemetry_sdk::resource::ResourceBuilder::with_service_name (mod.rs:299)
+              n1: 472 0x14B61A: batch_processor::main (main.rs:22)
+               n1: 472 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                n1: 472 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                 n1: 472 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                  n1: 472 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                   n1: 472 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                    n1: 472 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                     n1: 472 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                      n1: 472 0x205B06: {closure#1} (rt.rs:174)
+                       n1: 472 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                        n1: 472 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                         n1: 472 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                          n1: 472 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                           n1: 472 0x124439: std::rt::lang_start (rt.rs:194)
+                            n0: 472 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+ n1: 472 0x1A88DC: alloc::alloc::alloc (alloc.rs:99)
+  n1: 472 0x1A8A1C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 472 0x1A8BC8: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc.rs:257)
+    n1: 472 0x1A95A1: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+     n1: 472 0x1A95A1: hashbrown::raw::RawTableInner::new_uninitialized (mod.rs:1534)
+      n1: 472 0x1A992B: hashbrown::raw::RawTableInner::fallible_with_capacity (mod.rs:1572)
+       n1: 472 0x16BEEE: prepare_resize<alloc::alloc::Global> (mod.rs:2633)
+        n1: 472 0x16BEEE: resize_inner<alloc::alloc::Global> (mod.rs:2829)
+         n1: 472 0x16BEEE: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2719)
+          n1: 472 0x16BEEE: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1045)
+           n1: 472 0x16E5C4: hashbrown::raw::RawTable<T,A>::reserve (mod.rs:993)
+            n1: 472 0x16DDAD: hashbrown::raw::RawTable<T,A>::find_or_find_insert_slot (mod.rs:1206)
+             n1: 472 0x1891F7: find_or_find_insert_slot<opentelemetry::common::Key, opentelemetry::common::Value, std::hash::random::RandomState, alloc::alloc::Global, opentelemetry::common::Key> (map.rs:1810)
+              n1: 472 0x1891F7: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1790)
+               n2: 472 0x17BFB6: std::collections::hash::map::HashMap<K,V,S>::insert (map.rs:1169)
+                n1: 472 0x16641A: opentelemetry_sdk::resource::Resource::from_detectors (mod.rs:150)
+                 n2: 472 0x16604B: opentelemetry_sdk::resource::Resource::builder (mod.rs:64)
+                  n1: 472 0x14C6B6: <opentelemetry_stdout::logs::exporter::LogExporter as core::default::Default>::default (exporter.rs:19)
+                   n1: 472 0x14B43F: batch_processor::main (main.rs:10)
+                    n1: 472 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                     n1: 472 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                      n1: 472 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                       n1: 472 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                        n1: 472 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                         n1: 472 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                          n1: 472 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                           n1: 472 0x205B06: {closure#1} (rt.rs:174)
+                            n1: 472 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                             n1: 472 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                              n1: 472 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                               n1: 472 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                                n1: 472 0x124439: std::rt::lang_start (rt.rs:194)
+                                 n0: 472 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                  n0: 0 in 2 places, all below massif's threshold (1.00%)
+                n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=87120
+mem_heap_B=70954
+mem_heap_extra_B=438
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=87800
+mem_heap_B=71626
+mem_heap_extra_B=446
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=88728
+mem_heap_B=72380
+mem_heap_extra_B=620
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=89072
+mem_heap_B=72508
+mem_heap_extra_B=564
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=89696
+mem_heap_B=72499
+mem_heap_extra_B=701
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=90384
+mem_heap_B=72982
+mem_heap_extra_B=698
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=94536
+mem_heap_B=77071
+mem_heap_extra_B=665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=95024
+mem_heap_B=76599
+mem_heap_extra_B=649
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=95536
+mem_heap_B=76742
+mem_heap_extra_B=730
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=96280
+mem_heap_B=77293
+mem_heap_extra_B=731
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=97352
+mem_heap_B=78349
+mem_heap_extra_B=747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=97416
+mem_heap_B=78389
+mem_heap_extra_B=771
+mem_stacks_B=0
+heap_tree=peak
+n6: 78389 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 71723 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n3: 38912 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (mod.rs:803)
+     n1: 4096 0x12D55E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 4096 0x13E8C1: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:352)
+       n1: 4096 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+        n1: 4096 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+         n1: 4096 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+          n1: 4096 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+           n1: 4096 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+            n1: 4096 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+             n1: 4096 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+              n1: 4096 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+               n1: 4096 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                n1: 4096 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                 n1: 4096 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                  n1: 4096 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                   n1: 4096 0x4A1DAA3: start_thread (pthread_create.c:447)
+                    n0: 4096 0x4AAAA33: clone (clone.S:100)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n1: 32768 0x1C18CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x1C646E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 32768 0x1B381F: sharded_slab::shard::Array<T,C>::new (shard.rs:273)
+       n1: 32768 0x1C25AD: sharded_slab::pool::Pool<T>::new_with_config (pool.rs:394)
+        n1: 32768 0x1C25ED: sharded_slab::pool::Pool<T>::new (pool.rs:387)
+         n1: 32768 0x1BD68D: <tracing_subscriber::registry::sharded::Registry as core::default::Default>::default (sharded.rs:138)
+          n1: 32768 0x1BFABD: tracing_subscriber::registry (lib.rs:245)
+           n1: 32768 0x14B746: batch_processor::main (main.rs:27)
+            n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+             n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+              n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+               n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                 n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                  n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                   n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                    n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                     n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                      n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                       n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                        n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                         n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 43 in 1 place, below massif's threshold (1.00%)
+ n1: 1728 0x18971C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 1728 0x18985C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 1728 0x189650: allocate (alloc.rs:257)
+    n2: 1728 0x189650: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n1: 1584 0x180E6B: new<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope)> (boxed.rs:256)
+      n1: 1584 0x180E6B: <opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor as opentelemetry_sdk::logs::log_processor::LogProcessor>::emit (batch_log_processor.rs:159)
+       n1: 1584 0x167B04: <opentelemetry_sdk::logs::logger::SdkLogger as opentelemetry::logs::logger::Logger>::emit (logger.rs:56)
+        n1: 1584 0x12BB42: <opentelemetry_appender_tracing::layer::OpenTelemetryTracingBridge<P,L> as tracing_subscriber::layer::Layer<S>>::on_event (layer.rs:204)
+         n1: 1584 0x14AA54: <tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::event (layered.rs:153)
+          n1: 1584 0x1E7714: tracing_core::dispatcher::Dispatch::event (dispatcher.rs:613)
+           n1: 1584 0x1DFFA0: tracing_core::event::Event::dispatch::{{closure}} (event.rs:35)
+            n1: 1584 0x1E6FD0: tracing_core::dispatcher::get_default (dispatcher.rs:389)
+             n1: 1584 0x1DFF78: tracing_core::event::Event::dispatch (event.rs:34)
+              n0: 1584 in 3 places, all below massif's threshold (1.00%)
+     n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n0: 1594 in 23 places, all below massif's threshold (1.00%)
+ n1: 1280 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1280 0x20C05D: alloc (unix.rs:28)
+   n1: 1280 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n1: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n0: 1280 in 2 places, all below massif's threshold (1.00%)
+ n1: 1040 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 1040 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 1040 0x145D90: allocate (alloc.rs:257)
+    n1: 1040 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n0: 1040 in 5 places, all below massif's threshold (1.00%)
+ n1: 1024 0x20B4B1: alloc (alloc.rs:99)
+  n1: 1024 0x20B4B1: alloc_impl (alloc.rs:195)
+   n1: 1024 0x20B4B1: allocate (alloc.rs:257)
+    n1: 1024 0x20B4B1: try_allocate_in<alloc::alloc::Global> (raw_vec.rs:477)
+     n1: 1024 0x20B4B1: with_capacity_in<alloc::alloc::Global> (raw_vec.rs:423)
+      n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (raw_vec.rs:194)
+       n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:803)
+        n1: 1024 0x20B4B1: with_capacity<u8> (mod.rs:483)
+         n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (bufwriter.rs:122)
+          n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (linewriter.rs:110)
+           n1: 1024 0x20B4B1: new<std::io::stdio::StdoutRaw> (linewriter.rs:90)
+            n1: 1024 0x20B4B1: {closure#0} (stdio.rs:677)
+             n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+              n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:512)
+               n1: 1024 0x20B4B1: std::sync::once::Once::call_once_force::{{closure}} (once.rs:217)
+                n1: 1024 0x122E73: std::sys::sync::once::futex::Once::call (futex.rs:176)
+                 n1: 1024 0x1228EE: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !>> (once.rs:217)
+                  n1: 1024 0x1228EE: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:511)
+                   n1: 1024 0x208C23: get_or_try_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:390)
+                    n1: 1024 0x208C23: get_or_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+                     n1: 1024 0x208C23: stdout (stdio.rs:677)
+                      n1: 1024 0x208C23: print_to<std::io::stdio::Stdout> (stdio.rs:1122)
+                       n1: 1024 0x208C23: std::io::stdio::_print (stdio.rs:1232)
+                        n1: 1024 0x130A5D: <opentelemetry_stdout::logs::exporter::LogExporter as opentelemetry_sdk::logs::export::LogExporter>::export::{{closure}} (exporter.rs:43)
+                         n1: 1024 0x14645E: futures_executor::local_pool::block_on::{{closure}} (local_pool.rs:316)
+                          n1: 1024 0x1462FD: futures_executor::local_pool::run_executor::{{closure}} (local_pool.rs:90)
+                           n1: 1024 0x131422: std::thread::local::LocalKey<T>::try_with (local.rs:283)
+                            n1: 1024 0x130EC0: std::thread::local::LocalKey<T>::with (local.rs:260)
+                             n1: 1024 0x146257: futures_executor::local_pool::run_executor (local_pool.rs:86)
+                              n1: 1024 0x1463EB: futures_executor::local_pool::block_on (local_pool.rs:316)
+                               n1: 1024 0x14228E: opentelemetry_sdk::logs::batch_log_processor::export_batch_sync (batch_log_processor.rs:527)
+                                n1: 1024 0x141ED0: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}}::get_logs_and_export (batch_log_processor.rs:386)
+                                 n1: 1024 0x140F4B: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:458)
+                                  n1: 1024 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                                   n1: 1024 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+                                    n1: 1024 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+                                     n1: 1024 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+                                      n1: 1024 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                                       n1: 1024 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+                                        n1: 1024 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+                                         n1: 1024 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+                                          n1: 1024 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                                           n1: 1024 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                                            n1: 1024 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                                             n1: 1024 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                                              n1: 1024 0x4A1DAA3: start_thread (pthread_create.c:447)
+                                               n0: 1024 0x4AAAA33: clone (clone.S:100)
+#-----------
+snapshot=43
+#-----------
+time=97848
+mem_heap_B=78307
+mem_heap_extra_B=677
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=98488
+mem_heap_B=77727
+mem_heap_extra_B=617
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=99072
+mem_heap_B=77192
+mem_heap_extra_B=568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=99704
+mem_heap_B=76610
+mem_heap_extra_B=518
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=100568
+mem_heap_B=77223
+mem_heap_extra_B=577
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=101328
+mem_heap_B=77863
+mem_heap_extra_B=697
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=102288
+mem_heap_B=78689
+mem_heap_extra_B=831
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=102384
+mem_heap_B=78632
+mem_heap_extra_B=792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=102448
+mem_heap_B=78672
+mem_heap_extra_B=816
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=102512
+mem_heap_B=78632
+mem_heap_extra_B=792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=102576
+mem_heap_B=78672
+mem_heap_extra_B=816
+mem_stacks_B=0
+heap_tree=detailed
+n6: 78672 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 71746 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n3: 38912 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (mod.rs:803)
+     n1: 4096 0x12D55E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 4096 0x13E8C1: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:352)
+       n1: 4096 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+        n1: 4096 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+         n1: 4096 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+          n1: 4096 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+           n1: 4096 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+            n1: 4096 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+             n1: 4096 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+              n1: 4096 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+               n1: 4096 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                n1: 4096 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                 n1: 4096 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                  n1: 4096 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                   n1: 4096 0x4A1DAA3: start_thread (pthread_create.c:447)
+                    n0: 4096 0x4AAAA33: clone (clone.S:100)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n1: 32768 0x1C18CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x1C646E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 32768 0x1B381F: sharded_slab::shard::Array<T,C>::new (shard.rs:273)
+       n1: 32768 0x1C25AD: sharded_slab::pool::Pool<T>::new_with_config (pool.rs:394)
+        n1: 32768 0x1C25ED: sharded_slab::pool::Pool<T>::new (pool.rs:387)
+         n1: 32768 0x1BD68D: <tracing_subscriber::registry::sharded::Registry as core::default::Default>::default (sharded.rs:138)
+          n1: 32768 0x1BFABD: tracing_subscriber::registry (lib.rs:245)
+           n1: 32768 0x14B746: batch_processor::main (main.rs:27)
+            n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+             n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+              n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+               n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                 n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                  n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                   n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                    n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                     n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                      n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                       n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                        n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                         n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 66 in 2 places, all below massif's threshold (1.00%)
+ n1: 1920 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1920 0x20C05D: alloc (unix.rs:28)
+   n2: 1920 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n1: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n0: 1280 in 2 places, all below massif's threshold (1.00%)
+    n0: 640 in 1 place, below massif's threshold (1.00%)
+ n0: 1742 in 23 places, all below massif's threshold (1.00%)
+ n1: 1200 0x18971C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 1200 0x18985C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 1200 0x189650: allocate (alloc.rs:257)
+    n2: 1200 0x189650: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n1: 1056 0x180E6B: new<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope)> (boxed.rs:256)
+      n1: 1056 0x180E6B: <opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor as opentelemetry_sdk::logs::log_processor::LogProcessor>::emit (batch_log_processor.rs:159)
+       n1: 1056 0x167B04: <opentelemetry_sdk::logs::logger::SdkLogger as opentelemetry::logs::logger::Logger>::emit (logger.rs:56)
+        n1: 1056 0x12BB42: <opentelemetry_appender_tracing::layer::OpenTelemetryTracingBridge<P,L> as tracing_subscriber::layer::Layer<S>>::on_event (layer.rs:204)
+         n1: 1056 0x14AA54: <tracing_subscriber::layer::layered::Layered<L,S> as tracing_core::subscriber::Subscriber>::event (layered.rs:153)
+          n1: 1056 0x1E7714: tracing_core::dispatcher::Dispatch::event (dispatcher.rs:613)
+           n1: 1056 0x1DFFA0: tracing_core::event::Event::dispatch::{{closure}} (event.rs:35)
+            n1: 1056 0x1E6FD0: tracing_core::dispatcher::get_default (dispatcher.rs:389)
+             n1: 1056 0x1DFF78: tracing_core::event::Event::dispatch (event.rs:34)
+              n0: 1056 in 5 places, all below massif's threshold (1.00%)
+     n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n1: 1040 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 1040 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 1040 0x145D90: allocate (alloc.rs:257)
+    n1: 1040 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n0: 1040 in 5 places, all below massif's threshold (1.00%)
+ n1: 1024 0x20B4B1: alloc (alloc.rs:99)
+  n1: 1024 0x20B4B1: alloc_impl (alloc.rs:195)
+   n1: 1024 0x20B4B1: allocate (alloc.rs:257)
+    n1: 1024 0x20B4B1: try_allocate_in<alloc::alloc::Global> (raw_vec.rs:477)
+     n1: 1024 0x20B4B1: with_capacity_in<alloc::alloc::Global> (raw_vec.rs:423)
+      n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (raw_vec.rs:194)
+       n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:803)
+        n1: 1024 0x20B4B1: with_capacity<u8> (mod.rs:483)
+         n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (bufwriter.rs:122)
+          n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (linewriter.rs:110)
+           n1: 1024 0x20B4B1: new<std::io::stdio::StdoutRaw> (linewriter.rs:90)
+            n1: 1024 0x20B4B1: {closure#0} (stdio.rs:677)
+             n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+              n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:512)
+               n1: 1024 0x20B4B1: std::sync::once::Once::call_once_force::{{closure}} (once.rs:217)
+                n1: 1024 0x122E73: std::sys::sync::once::futex::Once::call (futex.rs:176)
+                 n1: 1024 0x1228EE: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !>> (once.rs:217)
+                  n1: 1024 0x1228EE: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:511)
+                   n1: 1024 0x208C23: get_or_try_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:390)
+                    n1: 1024 0x208C23: get_or_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+                     n1: 1024 0x208C23: stdout (stdio.rs:677)
+                      n1: 1024 0x208C23: print_to<std::io::stdio::Stdout> (stdio.rs:1122)
+                       n1: 1024 0x208C23: std::io::stdio::_print (stdio.rs:1232)
+                        n1: 1024 0x130A5D: <opentelemetry_stdout::logs::exporter::LogExporter as opentelemetry_sdk::logs::export::LogExporter>::export::{{closure}} (exporter.rs:43)
+                         n1: 1024 0x14645E: futures_executor::local_pool::block_on::{{closure}} (local_pool.rs:316)
+                          n1: 1024 0x1462FD: futures_executor::local_pool::run_executor::{{closure}} (local_pool.rs:90)
+                           n1: 1024 0x131422: std::thread::local::LocalKey<T>::try_with (local.rs:283)
+                            n1: 1024 0x130EC0: std::thread::local::LocalKey<T>::with (local.rs:260)
+                             n1: 1024 0x146257: futures_executor::local_pool::run_executor (local_pool.rs:86)
+                              n1: 1024 0x1463EB: futures_executor::local_pool::block_on (local_pool.rs:316)
+                               n1: 1024 0x14228E: opentelemetry_sdk::logs::batch_log_processor::export_batch_sync (batch_log_processor.rs:527)
+                                n1: 1024 0x141ED0: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}}::get_logs_and_export (batch_log_processor.rs:386)
+                                 n1: 1024 0x140F4B: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:458)
+                                  n1: 1024 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                                   n1: 1024 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+                                    n1: 1024 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+                                     n1: 1024 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+                                      n1: 1024 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                                       n1: 1024 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+                                        n1: 1024 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+                                         n1: 1024 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+                                          n1: 1024 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                                           n1: 1024 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                                            n1: 1024 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                                             n1: 1024 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                                              n1: 1024 0x4A1DAA3: start_thread (pthread_create.c:447)
+                                               n0: 1024 0x4AAAA33: clone (clone.S:100)
+#-----------
+snapshot=54
+#-----------
+time=102640
+mem_heap_B=78632
+mem_heap_extra_B=792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=102736
+mem_heap_B=78579
+mem_heap_extra_B=749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=103272
+mem_heap_B=78051
+mem_heap_extra_B=741
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=103368
+mem_heap_B=77994
+mem_heap_extra_B=702
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=103904
+mem_heap_B=77466
+mem_heap_extra_B=694
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=103984
+mem_heap_B=77514
+mem_heap_extra_B=726
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=104064
+mem_heap_B=77548
+mem_heap_extra_B=772
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=104144
+mem_heap_B=77596
+mem_heap_extra_B=804
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=104680
+mem_heap_B=78124
+mem_heap_extra_B=812
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=104760
+mem_heap_B=78076
+mem_heap_extra_B=780
+mem_stacks_B=0
+heap_tree=detailed
+n5: 78076 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 71746 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n3: 38912 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 4096 0x12D55E: with_capacity_in<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>, alloc::alloc::Global> (mod.rs:803)
+     n1: 4096 0x12D55E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 4096 0x13E8C1: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:352)
+       n1: 4096 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+        n1: 4096 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+         n1: 4096 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+          n1: 4096 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+           n1: 4096 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+            n1: 4096 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+             n1: 4096 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+              n1: 4096 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+               n1: 4096 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                n1: 4096 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                 n1: 4096 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                  n1: 4096 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                   n1: 4096 0x4A1DAA3: start_thread (pthread_create.c:447)
+                    n0: 4096 0x4AAAA33: clone (clone.S:100)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n1: 32768 0x1C18CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x1C646E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 32768 0x1B381F: sharded_slab::shard::Array<T,C>::new (shard.rs:273)
+       n1: 32768 0x1C25AD: sharded_slab::pool::Pool<T>::new_with_config (pool.rs:394)
+        n1: 32768 0x1C25ED: sharded_slab::pool::Pool<T>::new (pool.rs:387)
+         n1: 32768 0x1BD68D: <tracing_subscriber::registry::sharded::Registry as core::default::Default>::default (sharded.rs:138)
+          n1: 32768 0x1BFABD: tracing_subscriber::registry (lib.rs:245)
+           n1: 32768 0x14B746: batch_processor::main (main.rs:27)
+            n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+             n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+              n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+               n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                 n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                  n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                   n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                    n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                     n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                      n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                       n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                        n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                         n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 66 in 2 places, all below massif's threshold (1.00%)
+ n0: 2346 in 24 places, all below massif's threshold (1.00%)
+ n1: 1920 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1920 0x20C05D: alloc (unix.rs:28)
+   n2: 1920 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n1: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n0: 1280 in 2 places, all below massif's threshold (1.00%)
+    n0: 640 in 1 place, below massif's threshold (1.00%)
+ n1: 1040 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 1040 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 1040 0x145D90: allocate (alloc.rs:257)
+    n1: 1040 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n0: 1040 in 5 places, all below massif's threshold (1.00%)
+ n1: 1024 0x20B4B1: alloc (alloc.rs:99)
+  n1: 1024 0x20B4B1: alloc_impl (alloc.rs:195)
+   n1: 1024 0x20B4B1: allocate (alloc.rs:257)
+    n1: 1024 0x20B4B1: try_allocate_in<alloc::alloc::Global> (raw_vec.rs:477)
+     n1: 1024 0x20B4B1: with_capacity_in<alloc::alloc::Global> (raw_vec.rs:423)
+      n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (raw_vec.rs:194)
+       n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:803)
+        n1: 1024 0x20B4B1: with_capacity<u8> (mod.rs:483)
+         n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (bufwriter.rs:122)
+          n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (linewriter.rs:110)
+           n1: 1024 0x20B4B1: new<std::io::stdio::StdoutRaw> (linewriter.rs:90)
+            n1: 1024 0x20B4B1: {closure#0} (stdio.rs:677)
+             n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+              n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:512)
+               n1: 1024 0x20B4B1: std::sync::once::Once::call_once_force::{{closure}} (once.rs:217)
+                n1: 1024 0x122E73: std::sys::sync::once::futex::Once::call (futex.rs:176)
+                 n1: 1024 0x1228EE: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !>> (once.rs:217)
+                  n1: 1024 0x1228EE: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:511)
+                   n1: 1024 0x208C23: get_or_try_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:390)
+                    n1: 1024 0x208C23: get_or_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+                     n1: 1024 0x208C23: stdout (stdio.rs:677)
+                      n1: 1024 0x208C23: print_to<std::io::stdio::Stdout> (stdio.rs:1122)
+                       n1: 1024 0x208C23: std::io::stdio::_print (stdio.rs:1232)
+                        n1: 1024 0x130A5D: <opentelemetry_stdout::logs::exporter::LogExporter as opentelemetry_sdk::logs::export::LogExporter>::export::{{closure}} (exporter.rs:43)
+                         n1: 1024 0x14645E: futures_executor::local_pool::block_on::{{closure}} (local_pool.rs:316)
+                          n1: 1024 0x1462FD: futures_executor::local_pool::run_executor::{{closure}} (local_pool.rs:90)
+                           n1: 1024 0x131422: std::thread::local::LocalKey<T>::try_with (local.rs:283)
+                            n1: 1024 0x130EC0: std::thread::local::LocalKey<T>::with (local.rs:260)
+                             n1: 1024 0x146257: futures_executor::local_pool::run_executor (local_pool.rs:86)
+                              n1: 1024 0x1463EB: futures_executor::local_pool::block_on (local_pool.rs:316)
+                               n1: 1024 0x14228E: opentelemetry_sdk::logs::batch_log_processor::export_batch_sync (batch_log_processor.rs:527)
+                                n1: 1024 0x141ED0: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}}::get_logs_and_export (batch_log_processor.rs:386)
+                                 n1: 1024 0x140F4B: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:458)
+                                  n1: 1024 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                                   n1: 1024 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+                                    n1: 1024 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+                                     n1: 1024 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+                                      n1: 1024 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                                       n1: 1024 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+                                        n1: 1024 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+                                         n1: 1024 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+                                          n1: 1024 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                                           n1: 1024 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                                            n1: 1024 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                                             n1: 1024 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                                              n1: 1024 0x4A1DAA3: start_thread (pthread_create.c:447)
+                                               n0: 1024 0x4AAAA33: clone (clone.S:100)
+#-----------
+snapshot=64
+#-----------
+time=104856
+mem_heap_B=78076
+mem_heap_extra_B=796
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=104936
+mem_heap_B=78124
+mem_heap_extra_B=828
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=105512
+mem_heap_B=78683
+mem_heap_extra_B=845
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=105608
+mem_heap_B=78635
+mem_heap_extra_B=797
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=109712
+mem_heap_B=74539
+mem_heap_extra_B=789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=109792
+mem_heap_B=74491
+mem_heap_extra_B=757
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=110368
+mem_heap_B=73946
+mem_heap_extra_B=726
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=110448
+mem_heap_B=73898
+mem_heap_extra_B=694
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=110984
+mem_heap_B=73370
+mem_heap_extra_B=686
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=111152
+mem_heap_B=73218
+mem_heap_extra_B=670
+mem_stacks_B=0
+heap_tree=detailed
+n5: 73218 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 67616 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n3: 34816 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 32768 0x1C18CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x1C646E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 32768 0x1B381F: sharded_slab::shard::Array<T,C>::new (shard.rs:273)
+       n1: 32768 0x1C25AD: sharded_slab::pool::Pool<T>::new_with_config (pool.rs:394)
+        n1: 32768 0x1C25ED: sharded_slab::pool::Pool<T>::new (pool.rs:387)
+         n1: 32768 0x1BD68D: <tracing_subscriber::registry::sharded::Registry as core::default::Default>::default (sharded.rs:138)
+          n1: 32768 0x1BFABD: tracing_subscriber::registry (lib.rs:245)
+           n1: 32768 0x14B746: batch_processor::main (main.rs:27)
+            n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+             n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+              n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+               n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                 n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                  n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                   n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                    n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                     n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                      n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                       n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                        n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                         n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 32 in 2 places, all below massif's threshold (1.00%)
+ n1: 1920 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1920 0x20C05D: alloc (unix.rs:28)
+   n2: 1920 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n1: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n0: 1280 in 2 places, all below massif's threshold (1.00%)
+    n0: 640 in 1 place, below massif's threshold (1.00%)
+ n0: 1770 in 24 places, all below massif's threshold (1.00%)
+ n1: 1024 0x20B4B1: alloc (alloc.rs:99)
+  n1: 1024 0x20B4B1: alloc_impl (alloc.rs:195)
+   n1: 1024 0x20B4B1: allocate (alloc.rs:257)
+    n1: 1024 0x20B4B1: try_allocate_in<alloc::alloc::Global> (raw_vec.rs:477)
+     n1: 1024 0x20B4B1: with_capacity_in<alloc::alloc::Global> (raw_vec.rs:423)
+      n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (raw_vec.rs:194)
+       n1: 1024 0x20B4B1: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:803)
+        n1: 1024 0x20B4B1: with_capacity<u8> (mod.rs:483)
+         n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (bufwriter.rs:122)
+          n1: 1024 0x20B4B1: with_capacity<std::io::stdio::StdoutRaw> (linewriter.rs:110)
+           n1: 1024 0x20B4B1: new<std::io::stdio::StdoutRaw> (linewriter.rs:90)
+            n1: 1024 0x20B4B1: {closure#0} (stdio.rs:677)
+             n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+              n1: 1024 0x20B4B1: {closure#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:512)
+               n1: 1024 0x20B4B1: std::sync::once::Once::call_once_force::{{closure}} (once.rs:217)
+                n1: 1024 0x122E73: std::sys::sync::once::futex::Once::call (futex.rs:176)
+                 n1: 1024 0x1228EE: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !>> (once.rs:217)
+                  n1: 1024 0x1228EE: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:511)
+                   n1: 1024 0x208C23: get_or_try_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}>, !> (once_lock.rs:390)
+                    n1: 1024 0x208C23: get_or_init<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>, std::io::stdio::stdout::{closure_env#0}> (once_lock.rs:304)
+                     n1: 1024 0x208C23: stdout (stdio.rs:677)
+                      n1: 1024 0x208C23: print_to<std::io::stdio::Stdout> (stdio.rs:1122)
+                       n1: 1024 0x208C23: std::io::stdio::_print (stdio.rs:1232)
+                        n1: 1024 0x130A5D: <opentelemetry_stdout::logs::exporter::LogExporter as opentelemetry_sdk::logs::export::LogExporter>::export::{{closure}} (exporter.rs:43)
+                         n1: 1024 0x14645E: futures_executor::local_pool::block_on::{{closure}} (local_pool.rs:316)
+                          n1: 1024 0x1462FD: futures_executor::local_pool::run_executor::{{closure}} (local_pool.rs:90)
+                           n1: 1024 0x131422: std::thread::local::LocalKey<T>::try_with (local.rs:283)
+                            n1: 1024 0x130EC0: std::thread::local::LocalKey<T>::with (local.rs:260)
+                             n1: 1024 0x146257: futures_executor::local_pool::run_executor (local_pool.rs:86)
+                              n1: 1024 0x1463EB: futures_executor::local_pool::block_on (local_pool.rs:316)
+                               n1: 1024 0x14228E: opentelemetry_sdk::logs::batch_log_processor::export_batch_sync (batch_log_processor.rs:527)
+                                n1: 1024 0x141ED0: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}}::get_logs_and_export (batch_log_processor.rs:386)
+                                 n1: 1024 0x140F4B: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new::{{closure}} (batch_log_processor.rs:458)
+                                  n1: 1024 0x1247B5: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                                   n1: 1024 0x1441E2: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}} (mod.rs:561)
+                                    n1: 1024 0x14C5E2: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once (unwind_safe.rs:272)
+                                     n1: 1024 0x12B0DE: std::panicking::try::do_call (panicking.rs:557)
+                                      n1: 1024 0x1444AA: __rust_try (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+                                       n1: 1024 0x143F69: try<(), core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>> (panicking.rs:520)
+                                        n1: 1024 0x143F69: catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::{impl#0}::spawn_unchecked_::{closure#1}::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::{impl#2}::new::{closure_env#0}<opentelemetry_stdout::logs::exporter::LogExporter>, ()>>, ()> (panic.rs:358)
+                                         n1: 1024 0x143F69: std::thread::Builder::spawn_unchecked_::{{closure}} (mod.rs:559)
+                                          n1: 1024 0x131D4D: core::ops::function::FnOnce::call_once{{vtable.shim}} (function.rs:250)
+                                           n1: 1024 0x20E9FA: call_once<(), dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global> (boxed.rs:1972)
+                                            n1: 1024 0x20E9FA: call_once<(), alloc::boxed::Box<dyn core::ops::function::FnOnce<(), Output=()>, alloc::alloc::Global>, alloc::alloc::Global> (boxed.rs:1972)
+                                             n1: 1024 0x20E9FA: std::sys::pal::unix::thread::Thread::new::thread_start (thread.rs:105)
+                                              n1: 1024 0x4A1DAA3: start_thread (pthread_create.c:447)
+                                               n0: 1024 0x4AAAA33: clone (clone.S:100)
+ n1: 888 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 888 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 888 0x145D90: allocate (alloc.rs:257)
+    n1: 888 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n0: 888 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=111232
+mem_heap_B=73162
+mem_heap_extra_B=646
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=111360
+mem_heap_B=73074
+mem_heap_extra_B=606
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=111440
+mem_heap_B=73010
+mem_heap_extra_B=590
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=111536
+mem_heap_B=72944
+mem_heap_extra_B=560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=111648
+mem_heap_B=72848
+mem_heap_extra_B=544
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=111792
+mem_heap_B=72720
+mem_heap_extra_B=528
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=112552
+mem_heap_B=72080
+mem_heap_extra_B=408
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=112656
+mem_heap_B=72176
+mem_heap_extra_B=416
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=112760
+mem_heap_B=72080
+mem_heap_extra_B=408
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=113792
+mem_heap_B=71056
+mem_heap_extra_B=400
+mem_stacks_B=0
+heap_tree=detailed
+n4: 71056 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 67584 0x21C912: alloc::raw_vec::RawVecInner<A>::try_allocate_in (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n3: 34816 0x15A7CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x12D02D: with_capacity_in<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x12D02D: with_capacity<std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>> (mod.rs:483)
+      n1: 32768 0x12D02D: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 32768 0x12F739: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 32768 0x12F5BB: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 32768 0x13BAC0: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 32768 0x126D44: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 32768 0x1394F4: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<alloc::boxed::Box<(opentelemetry_sdk::logs::record::SdkLogRecord, opentelemetry::common::InstrumentationScope), alloc::alloc::Global>>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 32768 0x1394F4: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 32768 0x146D5D: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 32768 0x145AFB: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 32768 0x13D867: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:335)
+                n1: 32768 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 32768 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 2048 0x12D3AD: with_capacity_in<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>, alloc::alloc::Global> (mod.rs:803)
+     n1: 2048 0x12D3AD: with_capacity<std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>> (mod.rs:483)
+      n1: 2048 0x12D3AD: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter_nested::SpecFromIterNested<T,I>>::from_iter (spec_from_iter_nested.rs:54)
+       n1: 2048 0x12F769: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (spec_from_iter.rs:34)
+        n1: 2048 0x12F67B: <alloc::vec::Vec<T> as core::iter::traits::collect::FromIterator<T>>::from_iter (mod.rs:3412)
+         n1: 2048 0x13BB00: core::iter::traits::iterator::Iterator::collect (iterator.rs:1971)
+          n1: 2048 0x126DC4: alloc::boxed::iter::<impl core::iter::traits::collect::FromIterator<I> for alloc::boxed::Box<[I]>>::from_iter (iter.rs:144)
+           n1: 2048 0x139014: collect<core::iter::adapters::map::Map<core::ops::range::Range<usize>, std::sync::mpmc::array::{impl#1}::with_capacity::{closure_env#0}<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>>, alloc::boxed::Box<[std::sync::mpmc::array::Slot<opentelemetry_sdk::logs::batch_log_processor::BatchMessage>], alloc::alloc::Global>> (iterator.rs:1971)
+            n1: 2048 0x139014: std::sync::mpmc::array::Channel<T>::with_capacity (array.rs:109)
+             n1: 2048 0x1470FD: std::sync::mpmc::sync_channel (mod.rs:256)
+              n1: 2048 0x145B6B: std::sync::mpsc::sync_channel (mod.rs:576)
+               n1: 2048 0x13D8F4: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessor::new (batch_log_processor.rs:336)
+                n1: 2048 0x142CBE: opentelemetry_sdk::logs::batch_log_processor::BatchLogProcessorBuilder<E>::build (batch_log_processor.rs:564)
+                 n1: 2048 0x14B57C: batch_processor::main (main.rs:11)
+                  n1: 2048 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+                   n1: 2048 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+                    n1: 2048 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+                     n1: 2048 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                      n1: 2048 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                       n1: 2048 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                        n1: 2048 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                         n1: 2048 0x205B06: {closure#1} (rt.rs:174)
+                          n1: 2048 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                           n1: 2048 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                            n1: 2048 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                             n1: 2048 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                              n1: 2048 0x124439: std::rt::lang_start (rt.rs:194)
+                               n0: 2048 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 32768 0x1C18CD: alloc::raw_vec::RawVecInner<A>::with_capacity_in (raw_vec.rs:423)
+   n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (raw_vec.rs:194)
+    n1: 32768 0x1C646E: with_capacity_in<sharded_slab::shard::Ptr<tracing_subscriber::registry::sharded::DataInner, sharded_slab::cfg::DefaultConfig>, alloc::alloc::Global> (mod.rs:803)
+     n1: 32768 0x1C646E: alloc::vec::Vec<T>::with_capacity (mod.rs:483)
+      n1: 32768 0x1B381F: sharded_slab::shard::Array<T,C>::new (shard.rs:273)
+       n1: 32768 0x1C25AD: sharded_slab::pool::Pool<T>::new_with_config (pool.rs:394)
+        n1: 32768 0x1C25ED: sharded_slab::pool::Pool<T>::new (pool.rs:387)
+         n1: 32768 0x1BD68D: <tracing_subscriber::registry::sharded::Registry as core::default::Default>::default (sharded.rs:138)
+          n1: 32768 0x1BFABD: tracing_subscriber::registry (lib.rs:245)
+           n1: 32768 0x14B746: batch_processor::main (main.rs:27)
+            n1: 32768 0x131DAA: core::ops::function::FnOnce::call_once (function.rs:250)
+             n1: 32768 0x12478D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:154)
+              n1: 32768 0x124460: std::rt::lang_start::{{closure}} (rt.rs:195)
+               n1: 32768 0x205B06: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:284)
+                n1: 32768 0x205B06: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:557)
+                 n1: 32768 0x205B06: try<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:520)
+                  n1: 32768 0x205B06: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:358)
+                   n1: 32768 0x205B06: {closure#1} (rt.rs:174)
+                    n1: 32768 0x205B06: do_call<std::rt::lang_start_internal::{closure_env#1}, isize> (panicking.rs:557)
+                     n1: 32768 0x205B06: try<isize, std::rt::lang_start_internal::{closure_env#1}> (panicking.rs:520)
+                      n1: 32768 0x205B06: catch_unwind<std::rt::lang_start_internal::{closure_env#1}, isize> (panic.rs:358)
+                       n1: 32768 0x205B06: std::rt::lang_start_internal (rt.rs:174)
+                        n1: 32768 0x124439: std::rt::lang_start (rt.rs:194)
+                         n0: 32768 0x14C1DD: main (in /home/shunpoco/Documents/oss/forks/opentelemetry-rust/target/debug/batch-processor)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n0: 1352 in 25 places, all below massif's threshold (1.00%)
+ n1: 1280 0x20C05D: aligned_malloc (unix.rs:85)
+  n1: 1280 0x20C05D: alloc (unix.rs:28)
+   n2: 1280 0x20C05D: __rdl_alloc (alloc.rs:401)
+    n1: 1280 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+     n1: 1280 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+      n1: 1280 0x145D90: allocate (alloc.rs:257)
+       n1: 1280 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+        n0: 1280 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 840 0x145E5C: alloc::alloc::alloc (alloc.rs:99)
+  n1: 840 0x145F9C: alloc::alloc::Global::alloc_impl (alloc.rs:195)
+   n1: 840 0x145D90: allocate (alloc.rs:257)
+    n1: 840 0x145D90: alloc::alloc::exchange_malloc (alloc.rs:352)
+     n0: 840 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=84
+#-----------
+time=113864
+mem_heap_B=71000
+mem_heap_extra_B=384
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=113960
+mem_heap_B=70936
+mem_heap_extra_B=352
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=114312
+mem_heap_B=70600
+mem_heap_extra_B=336
+mem_stacks_B=0
+heap_tree=empty
