@@ -43,3 +43,9 @@ pub enum OTelSdkError {
 
 /// A specialized `Result` type for Shutdown operations.
 pub type OTelSdkResult = Result<(), OTelSdkError>;
+
+#[derive(Error, Debug)]
+pub enum ProviderBuilderError {
+    #[error("hogehoge: {0}")]
+    SomeError(String),
+}
